@@ -3,6 +3,7 @@ __pycache__/
 node_modules/
 .next/
 out/
+out-*/
 build/
 *.tsbuildinfo
 .env*.local
