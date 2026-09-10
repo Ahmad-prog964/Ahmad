@@ -1,0 +1,45 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { hasWebGL } from "@/lib/device";
+import { usePlumberStore } from "@/store/usePlumberStore";
+import { business } from "@/lib/plumber/business";
+
+const Scene = dynamic(() => import("@/components/plumber/Scene"), { ssr: false });
+
+export default function SceneGate() {
+  const [webglOk, setWebglOk] = useState<boolean | null>(null);
+  const setIntroDone = usePlumberStore((s) => s.setIntroDone);
+
+  useEffect(() => {
+    const ok = hasWebGL();
+    setWebglOk(ok);
+    if (!ok) {
+      setIntroDone(true);
+      document.body.classList.remove("noscroll-lock");
+    }
+  }, [setIntroDone]);
+
+  if (webglOk === null) return null;
+
+  if (!webglOk) {
+    return (
+      <div className="fixed inset-0 z-0 bg-gradient-to-b from-ink via-ink-2 to-ink">
+        <div className="flex h-screen w-full flex-col items-center justify-center px-6 text-center">
+          <p className="mb-4 font-display text-xs font-semibold uppercase tracking-[0.5em] text-accent-2">
+            {business.initials} — {business.name}
+          </p>
+          <h1 className="text-huge text-5xl text-paper md:text-7xl">
+            Plumbing &amp; Heating.
+            <span className="mt-3 block text-2xl font-normal tracking-normal text-mute md:text-3xl">
+              Done right, day or night.
+            </span>
+          </h1>
+        </div>
+      </div>
+    );
+  }
+
+  return <Scene />;
+}

@@ -27,7 +27,7 @@ export default function StoryText({
     >
       {eyebrow && (
         <p
-          className="mb-4 font-display text-xs font-semibold uppercase tracking-[0.5em] text-accent-2"
+          className="text-shadow-soft mb-4 font-display text-xs font-semibold uppercase tracking-[0.5em] text-accent-2"
           style={{ transform: `translateY(${translate}px)` }}
         >
           {eyebrow}
@@ -43,7 +43,7 @@ export default function StoryText({
             className={
               i === 0
                 ? `block ${size === "huge" ? "text-6xl md:text-8xl" : "text-4xl md:text-6xl"}`
-                : "mt-3 block font-body text-base font-normal tracking-normal text-mute md:text-xl"
+                : "text-shadow-soft mt-6 block font-body text-base font-normal tracking-normal text-mute md:mt-8 md:text-xl"
             }
           >
             {line}

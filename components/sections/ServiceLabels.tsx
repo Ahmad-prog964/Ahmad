@@ -15,11 +15,11 @@ export default function ServiceLabels() {
         className="text-center transition-all duration-500"
         style={{ opacity: service ? 1 : 0, transform: `translateY(${service ? 0 : 16}px)` }}
       >
-        <p className="mb-3 font-display text-xs font-semibold uppercase tracking-[0.5em] text-accent-2">
+        <p className="text-shadow-soft mb-3 font-display text-xs font-semibold uppercase tracking-[0.5em] text-accent-2">
           Mobile Mechanic Services
         </p>
         <h3 className="text-huge text-5xl text-paper md:text-7xl">{service?.title ?? ""}</h3>
-        <p className="mx-auto mt-5 max-w-md text-balance text-sm text-mute md:text-base">
+        <p className="text-shadow-soft mx-auto mt-5 max-w-md text-balance text-sm text-mute md:text-base">
           {service?.copy ?? ""}
         </p>
       </div>
