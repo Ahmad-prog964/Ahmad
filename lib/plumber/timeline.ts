@@ -17,7 +17,7 @@ export const STAGES: Stage[] = [
   { id: "inside", start: 0.44, end: 0.58, label: "DIAGNOSED. REPAIRED. GUARANTEED." },
   { id: "services", start: 0.58, end: 0.78, label: "" },
   { id: "callout", start: 0.78, end: 0.88, label: "WE COME TO YOU.\n24/7 — day or night." },
-  { id: "area", start: 0.88, end: 1.0, label: "SERVING ROMFORD\n& NEARBY AREAS" },
+  { id: "area", start: 0.88, end: 1.0, label: "WE COME TO YOU.\nGet in touch today." },
 ];
 
 export function getStage(progress: number): Stage {
@@ -70,15 +70,18 @@ export function getCutawayFocus(progress: number) {
   return smoothstep(localT(progress, 0.44, 0.5)) * (1 - smoothstep(localT(progress, 0.76, 0.82)));
 }
 
-export const SERVICE_IDS = ["boiler-install", "boiler-repair", "bathroom-install", "hot-water-cylinder", "leak-repair", "boiler-emergency"] as const;
-export type ServiceId = (typeof SERVICE_IDS)[number];
+const SERVICE_SLOT_COUNT = 6;
 
-export function getActiveService(progress: number): ServiceId | null {
+/**
+ * Which of the 6 service slots is active during the "services" stage, as a plain index
+ * (-1 outside the stage) — kept business-agnostic so any business's own `services` array,
+ * of the same length, can be indexed by it.
+ */
+export function getActiveServiceIndex(progress: number) {
   const stage = STAGES.find((s) => s.id === "services")!;
-  if (progress < stage.start || progress >= stage.end) return null;
+  if (progress < stage.start || progress >= stage.end) return -1;
   const t = localT(progress, stage.start, stage.end);
-  const idx = Math.min(SERVICE_IDS.length - 1, Math.floor(t * SERVICE_IDS.length));
-  return SERVICE_IDS[idx];
+  return Math.min(SERVICE_SLOT_COUNT - 1, Math.floor(t * SERVICE_SLOT_COUNT));
 }
 
 /** The rig sinks out of frame once the story moves to "callout"/"area" text, so it stops crowding those shots. */

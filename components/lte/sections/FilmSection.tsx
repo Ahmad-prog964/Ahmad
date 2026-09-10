@@ -2,15 +2,9 @@
 
 import { STAGES } from "@/lib/plumber/timeline";
 import StoryText from "@/components/plumber/sections/StoryText";
-import ServiceLabels from "@/components/plumber/sections/ServiceLabels";
-import { business } from "@/lib/plumber/business";
+import ServiceLabels from "@/components/lte/sections/ServiceLabels";
 
 const TOTAL_VH = 3000;
-
-/** Business-specific overrides for shared stage copy — keeps location claims out of the reusable timeline. */
-const LABEL_OVERRIDES: Partial<Record<string, string>> = {
-  area: `SERVING ${business.baseArea.toUpperCase()}\n& NEARBY AREAS`,
-};
 
 export default function FilmSection() {
   return (
@@ -23,11 +17,7 @@ export default function FilmSection() {
               {stage.id === "services" ? (
                 <ServiceLabels />
               ) : stage.label ? (
-                <StoryText
-                  stageId={stage.id}
-                  label={LABEL_OVERRIDES[stage.id]}
-                  size={stage.id === "hero" || stage.id === "area" ? "huge" : "large"}
-                />
+                <StoryText stageId={stage.id} size={stage.id === "hero" || stage.id === "area" ? "huge" : "large"} />
               ) : null}
             </div>
           </div>

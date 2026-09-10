@@ -2,7 +2,7 @@
 
 import { usePlumberStore } from "@/store/usePlumberStore";
 import { getActiveServiceIndex } from "@/lib/plumber/timeline";
-import { business } from "@/lib/plumber/business";
+import { business } from "@/lib/lte/business";
 
 export default function ServiceLabels() {
   const progress = usePlumberStore((s) => s.progress);

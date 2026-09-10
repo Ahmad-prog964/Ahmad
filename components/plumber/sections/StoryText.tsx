@@ -3,13 +3,25 @@
 import { usePlumberStore } from "@/store/usePlumberStore";
 import { getStageVisibility, STAGES, type StageId } from "@/lib/plumber/timeline";
 
-export default function StoryText({ stageId, eyebrow, size = "large" }: { stageId: StageId; eyebrow?: string; size?: "large" | "huge" }) {
+export default function StoryText({
+  stageId,
+  eyebrow,
+  size = "large",
+  label,
+}: {
+  stageId: StageId;
+  eyebrow?: string;
+  size?: "large" | "huge";
+  /** Overrides the stage's default copy — use for business-specific text (e.g. a named service area). */
+  label?: string;
+}) {
   const progress = usePlumberStore((s) => s.progress);
   const visibility = getStageVisibility(progress, stageId);
   const stage = STAGES.find((s) => s.id === stageId);
-  if (!stage || !stage.label) return null;
+  const text = label ?? stage?.label;
+  if (!stage || !text) return null;
 
-  const lines = stage.label.split("\n");
+  const lines = text.split("\n");
   const translate = (1 - visibility) * 24;
 
   return (

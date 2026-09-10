@@ -12,7 +12,7 @@ export default function ServiceLabels() {
   return (
     <div className="pointer-events-none flex h-full w-full items-center justify-center px-6">
       <div
-        className="text-center transition-all duration-500"
+        className="scene-text-scrim text-center transition-all duration-500 px-10 py-12 md:px-16 md:py-16"
         style={{ opacity: service ? 1 : 0, transform: `translateY(${service ? 0 : 16}px)` }}
       >
         <p className="text-shadow-soft mb-3 font-display text-xs font-semibold uppercase tracking-[0.5em] text-accent-2">

@@ -48,6 +48,16 @@ body {
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
 }
 
+/* Soft dark scrim behind text that sits over the 3D scene, so it stays legible over bright geometry. */
+.scene-text-scrim {
+  background: radial-gradient(
+    ellipse 65% 75% at 50% 50%,
+    rgba(5, 5, 6, 0.6) 0%,
+    rgba(5, 5, 6, 0.28) 55%,
+    transparent 80%
+  );
+}
+
 .hairline {
   border-color: var(--color-line);
 }
