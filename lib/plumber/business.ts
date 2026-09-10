@@ -1,12 +1,10 @@
 /**
  * Real data sourced from the verified Google Business Profile screenshot supplied by the user.
- * `name` is a placeholder — the business name was not included in what was shared, so it must
- * not be invented. Everything else here is real; never add testimonial quotes that weren't
- * actually supplied.
+ * Never add testimonial quotes that weren't actually supplied.
  */
 export const business = {
-  name: "YOUR BUSINESS NAME", // TODO: replace with the real trading name
-  initials: "YB", // TODO: replace once the real name is known
+  name: "James Plumbing",
+  initials: "JP",
   phone: "07700 117489",
   phoneHref: "tel:+447700117489",
   category: "Plumber",
