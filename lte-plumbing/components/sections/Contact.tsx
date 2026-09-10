@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { business } from "@/lib/lte/business";
+import { business } from "@/lib/business";
 import MagneticButton from "@/components/ui/MagneticButton";
 
 export default function Contact() {

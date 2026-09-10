@@ -1,11 +1,11 @@
 "use client";
 
-import { usePlumberStore } from "@/store/usePlumberStore";
+import { useSceneStore } from "@/store/useSceneStore";
 import MagneticButton from "@/components/ui/MagneticButton";
-import { business } from "@/lib/lte/business";
+import { business } from "@/lib/business";
 
 export default function FinalCTA() {
-  const ctaProgress = usePlumberStore((s) => s.ctaProgress);
+  const ctaProgress = useSceneStore((s) => s.ctaProgress);
 
   return (
     <section id="plumber-cta-section" className="relative" style={{ height: "170vh" }}>

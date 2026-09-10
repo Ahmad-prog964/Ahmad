@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { business } from "@/lib/lte/business";
+import { business } from "@/lib/business";
 
 export default function About() {
   return (

@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { hasWebGL } from "@/lib/device";
-import { usePlumberStore } from "@/store/usePlumberStore";
-import { business } from "@/lib/lte/business";
+import { useSceneStore } from "@/store/useSceneStore";
+import { business } from "@/lib/business";
 
-const Scene = dynamic(() => import("@/components/plumber/Scene"), { ssr: false });
+const Scene = dynamic(() => import("@/components/canvas/Scene"), { ssr: false });
 
 export default function SceneGate() {
   const [webglOk, setWebglOk] = useState<boolean | null>(null);
-  const setIntroDone = usePlumberStore((s) => s.setIntroDone);
+  const setIntroDone = useSceneStore((s) => s.setIntroDone);
 
   useEffect(() => {
     const ok = hasWebGL();

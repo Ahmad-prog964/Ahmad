@@ -1,17 +1,17 @@
-import SceneGate from "@/components/lte/SceneGate";
-import ScrollOrchestrator from "@/components/plumber/ScrollOrchestrator";
-import IntroSequence from "@/components/lte/IntroSequence";
-import Header from "@/components/lte/sections/Header";
-import FilmSection from "@/components/lte/sections/FilmSection";
-import GoogleReviews from "@/components/lte/sections/GoogleReviews";
-import ServicesPanels from "@/components/lte/sections/ServicesPanels";
-import WhyChooseUs from "@/components/lte/sections/WhyChooseUs";
-import HowItWorks from "@/components/lte/sections/HowItWorks";
-import ServiceArea from "@/components/lte/sections/ServiceArea";
-import About from "@/components/lte/sections/About";
-import Contact from "@/components/lte/sections/Contact";
-import FinalCTA from "@/components/lte/sections/FinalCTA";
-import { business } from "@/lib/lte/business";
+import SceneGate from "@/components/canvas/SceneGate";
+import ScrollOrchestrator from "@/components/canvas/ScrollOrchestrator";
+import IntroSequence from "@/components/canvas/IntroSequence";
+import Header from "@/components/sections/Header";
+import FilmSection from "@/components/sections/FilmSection";
+import GoogleReviews from "@/components/sections/GoogleReviews";
+import ServicesPanels from "@/components/sections/ServicesPanels";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import HowItWorks from "@/components/sections/HowItWorks";
+import ServiceArea from "@/components/sections/ServiceArea";
+import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
+import FinalCTA from "@/components/sections/FinalCTA";
+import { business } from "@/lib/business";
 
 export const metadata = {
   title: `${business.name} | Plumbing & Heating`,

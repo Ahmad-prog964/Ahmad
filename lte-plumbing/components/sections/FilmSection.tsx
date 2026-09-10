@@ -1,8 +1,8 @@
 "use client";
 
-import { STAGES } from "@/lib/plumber/timeline";
-import StoryText from "@/components/plumber/sections/StoryText";
-import ServiceLabels from "@/components/lte/sections/ServiceLabels";
+import { STAGES } from "@/lib/timeline";
+import StoryText from "@/components/sections/StoryText";
+import ServiceLabels from "@/components/sections/ServiceLabels";
 
 const TOTAL_VH = 3000;
 

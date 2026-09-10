@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { business } from "@/lib/lte/business";
+import { business } from "@/lib/business";
 
 type ServiceId = (typeof business.services)[number]["id"];
 

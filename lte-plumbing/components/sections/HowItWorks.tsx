@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { business } from "@/lib/lte/business";
+import { business } from "@/lib/business";
 
 const steps = [
   { n: "01", title: "Call, text or WhatsApp", copy: `Tell us what's wrong. ${business.phone}.` },

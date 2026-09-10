@@ -1,6 +1,6 @@
 "use client";
 
-import { business } from "@/lib/lte/business";
+import { business } from "@/lib/business";
 
 export default function Header() {
   return (

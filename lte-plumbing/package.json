@@ -1,0 +1,35 @@
+{
+  "name": "lte-plumbing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "L.T.E. Plumbing Services Ltd — cinematic 3D site",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
+    "@react-three/postprocessing": "^3.1.1",
+    "framer-motion": "^13.2.0",
+    "gsap": "^3.15.0",
+    "next": "^16.3.4",
+    "postprocessing": "^6.39.5",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "three": "^0.186.0",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.20.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.185.4",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { business } from "@/lib/lte/business";
+import { business } from "@/lib/business";
 
 const points = [
   { title: "24-hour emergency call-out", copy: "Burst pipe, blocked drain, no heating — rapid response, day or night." },

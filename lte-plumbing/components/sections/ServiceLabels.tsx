@@ -1,11 +1,11 @@
 "use client";
 
-import { usePlumberStore } from "@/store/usePlumberStore";
-import { getActiveServiceIndex } from "@/lib/plumber/timeline";
-import { business } from "@/lib/lte/business";
+import { useSceneStore } from "@/store/useSceneStore";
+import { getActiveServiceIndex } from "@/lib/timeline";
+import { business } from "@/lib/business";
 
 export default function ServiceLabels() {
-  const progress = usePlumberStore((s) => s.progress);
+  const progress = useSceneStore((s) => s.progress);
   const index = getActiveServiceIndex(progress);
   const service = index >= 0 ? business.services[index] : undefined;
 

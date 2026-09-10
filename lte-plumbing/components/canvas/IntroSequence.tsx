@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { usePlumberStore } from "@/store/usePlumberStore";
-import { business } from "@/lib/lte/business";
+import { useSceneStore } from "@/store/useSceneStore";
+import { business } from "@/lib/business";
 
 export default function IntroSequence() {
   const rootRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
   const brandRef = useRef<HTMLDivElement>(null);
-  const setIntroDone = usePlumberStore((s) => s.setIntroDone);
+  const setIntroDone = useSceneStore((s) => s.setIntroDone);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {

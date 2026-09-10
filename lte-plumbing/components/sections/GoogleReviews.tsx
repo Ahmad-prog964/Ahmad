@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { business } from "@/lib/lte/business";
+import { business } from "@/lib/business";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
