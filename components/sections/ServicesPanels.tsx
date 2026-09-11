@@ -60,14 +60,22 @@ export default function ServicesPanels() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-2xl border border-line bg-surface p-8 md:p-12"
+            className="relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-2xl border border-line bg-surface p-8 md:min-h-[420px] md:p-12"
           >
+            {"image" in activeService && (
+              <img
+                src={activeService.image}
+                alt={activeService.title}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10" />
             <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
-            <span className="mb-4 font-display text-6xl font-extrabold text-paper/10 md:text-8xl">
+            <span className="relative mb-4 font-display text-6xl font-extrabold text-paper/20 md:text-8xl">
               {String(business.services.findIndex((s) => s.id === activeService.id) + 1).padStart(2, "0")}
             </span>
-            <h3 className="font-display text-3xl font-bold text-paper md:text-4xl">{activeService.title}</h3>
-            <p className="mt-4 max-w-md text-mute">{activeService.copy}</p>
+            <h3 className="relative font-display text-3xl font-bold text-paper md:text-4xl">{activeService.title}</h3>
+            <p className="relative mt-4 max-w-md text-paper/80">{activeService.copy}</p>
           </motion.div>
         </div>
       </div>
